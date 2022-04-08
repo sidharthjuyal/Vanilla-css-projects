@@ -1,0 +1,153 @@
+*{
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+
+body{
+    font-family: 'poppins';
+}
+
+header{
+    background-color: rgb(14, 14, 94);
+    font-size:1.6rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: head-load;
+    animation-duration:300ms;
+    animation-timing-function: ease-in;
+}
+
+header ul{
+    list-style: none;
+    display: flex;
+    flex-direction:row;
+}
+
+header ul li{
+    padding:18px;
+    animation:link-load;
+    animation-duration:500ms;
+    animation-timing-function: ease-in;
+    transform:scale(0);
+    animation-fill-mode: forwards;
+}
+
+header ul li:first-child{
+    animation:first-link-load;
+    animation-duration:500ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    transform: translateX(-1000%);
+}
+
+header ul li:last-child{
+    animation:last-link-load;
+    animation-duration:500ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    transform: translateX(1000%);
+}
+
+header ul li:hover{
+    background-color: rgb(105, 105, 206);
+}
+
+header ul li a{
+    text-decoration:none;
+    color:white;
+}
+
+article{
+    margin:2rem;
+    font-size: 1.2rem;
+}
+
+article h1{
+    margin-bottom:20px;
+    font-size: 1.8rem;
+    animation:article-load 300ms ease-in 600ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity:0;
+}
+
+article p{
+    margin-bottom:20px;
+    animation:article-p-load 300ms ease-in 800ms;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity:0;
+}
+
+/* animations */
+
+@keyframes head-load{
+    0%{
+        transform: translateY(-100%);
+        opacity:0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+
+@keyframes link-load{
+    0%{
+        transform: scale(0);
+    }
+    90%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes first-link-load{
+    0%{
+        transform: translateX(-1000%);
+    }
+    90%{
+        transform: translateX(25%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes last-link-load{
+    0%{
+        transform: translateX(1000%);
+    }
+    90%{
+        transform: translateX(-25%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes article-load{
+    0%{
+        transform: translateY(-20px);
+        opacity:0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+@keyframes article-p-load{
+    0%{
+        transform: translateY(-20px);
+        opacity:0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
